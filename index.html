@@ -22,9 +22,9 @@ img { display:block; max-width:100%; }
 nav { position:sticky; top:0; z-index:100; background:rgba(250,246,241,0.96); backdrop-filter:blur(10px); border-bottom:1px solid rgba(0,0,0,0.06); padding:0.9rem 1.5rem; }
 .nav-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
 .nav-logo { display:flex; align-items:center; gap:0.7rem; text-decoration:none; color:var(--gray-dark); }
-.nav-logo img { width:42px; height:42px; border-radius:50%; }
+.nav-logo img { width:48px; height:48px; }
 .nav-logo .name { font-family:'Caveat Brush',cursive; font-size:1.3rem; color:var(--pink-deepest); line-height:1; }
-.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links { display:flex; gap:1.8rem; list-style:none; }
 .nav-links a { color:var(--gray-dark); text-decoration:none; font-family:'Inter',sans-serif; font-size:0.92rem; font-weight:500; transition:color 0.2s; }
 .nav-links a:hover { color:var(--pink-deep); }
 .nav-menu-btn { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; }
@@ -34,6 +34,7 @@ nav { position:sticky; top:0; z-index:100; background:rgba(250,246,241,0.96); ba
   background: radial-gradient(circle at 20% 30%, rgba(244,168,184,0.18) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(244,168,184,0.12) 0%, transparent 50%), var(--cream); }
 .hero::before { content:''; position:absolute; inset:0; background-image:radial-gradient(circle, rgba(232,122,146,0.08) 1px, transparent 1px); background-size:28px 28px; pointer-events:none; }
 .hero-inner { max-width:1100px; width:100%; display:grid; grid-template-columns:1.1fr 1fr; gap:4rem; align-items:center; position:relative; z-index:1; }
+.hero-text .hero-logo { width:180px; height:180px; margin-bottom:1rem; }
 .hero-text .eyebrow { font-family:'Caveat Brush',cursive; color:var(--pink-deep); font-size:1.5rem; margin-bottom:0.4rem; transform:rotate(-2deg); display:inline-block; }
 .hero-text h1 { font-family:'Fraunces',serif; font-weight:800; font-size:clamp(2.6rem,6vw,4.4rem); line-height:1; letter-spacing:-0.02em; margin-bottom:1.2rem; color:var(--gray-dark); }
 .hero-text h1 .accent { font-style:italic; font-weight:400; color:var(--pink-deepest); }
@@ -59,6 +60,11 @@ section { padding:5rem 1.5rem; }
 .section-header p { color:var(--gray); max-width:600px; margin:0 auto; font-size:1.05rem; }
 
 #menu { background:var(--cream-warm); }
+.military-banner { background:white; border:2px dashed var(--pink-deep); border-radius:16px; padding:1.2rem 2rem; max-width:700px; margin:0 auto 2.5rem; text-align:center; }
+.military-banner .star { color:var(--pink-deep); font-size:1.2rem; }
+.military-banner p { font-family:'Fraunces',serif; font-size:1rem; color:var(--gray-dark); margin:0; line-height:1.5; }
+.military-banner strong { color:var(--pink-deepest); font-weight:700; }
+
 .menu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
 .menu-card { background:white; border-radius:16px; padding:1.8rem; display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; transition:transform 0.25s, box-shadow 0.25s; border:1px solid rgba(0,0,0,0.04); }
 .menu-card:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(0,0,0,0.08); }
@@ -80,6 +86,20 @@ section { padding:5rem 1.5rem; }
 .gallery-item .caption span { color:white; font-family:'Fraunces',serif; font-size:0.95rem; font-style:italic; }
 .gallery-item.tall { grid-row:span 2; }
 .gallery-item.wide { grid-column:span 2; }
+
+/* LOGO COOKIE FEATURE SECTION */
+#logos { background:linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%); }
+.logos-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.logos-image { position:relative; }
+.logos-image img { width:100%; max-width:500px; margin:0 auto; display:block; border-radius:16px; box-shadow:0 20px 50px rgba(0,0,0,0.15); }
+.logos-image .tag-stamp { position:absolute; top:-20px; right:0; background:var(--pink-deep); color:white; padding:0.7rem 1.4rem; border-radius:999px; font-family:'Caveat Brush',cursive; font-size:1.3rem; transform:rotate(8deg); box-shadow:0 8px 20px rgba(232,122,146,0.4); z-index:2; }
+.logos-text .eyebrow { font-family:'Caveat Brush',cursive; color:var(--pink-deep); font-size:1.4rem; margin-bottom:0.3rem; display:inline-block; }
+.logos-text h2 { font-family:'Fraunces',serif; font-weight:700; font-size:2.4rem; line-height:1.1; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.logos-text h2 .accent { font-style:italic; color:var(--pink-deepest); }
+.logos-text p { color:var(--gray); margin-bottom:1.2rem; font-size:1.05rem; line-height:1.7; }
+.logos-text ul { list-style:none; padding:0; margin-bottom:1.5rem; }
+.logos-text ul li { font-family:'Fraunces',serif; padding:0.5rem 0; padding-left:1.5rem; position:relative; color:var(--gray-dark); }
+.logos-text ul li::before { content:'✦'; position:absolute; left:0; color:var(--pink-deep); font-size:1rem; }
 
 #order { background:var(--gray-dark); color:white; }
 #order .section-header h2 { color:white; }
@@ -136,7 +156,7 @@ section { padding:5rem 1.5rem; }
 
 footer { background:var(--gray-dark); color:rgba(255,255,255,0.7); padding:3.5rem 1.5rem 2rem; text-align:center; }
 footer .footer-logo { display:inline-flex; align-items:center; gap:0.8rem; margin-bottom:1.5rem; }
-footer .footer-logo img { width:50px; height:50px; border-radius:50%; }
+footer .footer-logo img { width:60px; height:60px; }
 footer .footer-logo .name { font-family:'Caveat Brush',cursive; font-size:1.6rem; color:var(--pink); }
 footer .tagline { font-family:'Fraunces',serif; font-style:italic; margin-bottom:1.5rem; color:rgba(255,255,255,0.8); }
 footer .contact-link { color:var(--pink); text-decoration:none; font-family:'Inter',sans-serif; font-weight:500; }
@@ -149,8 +169,12 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
 .lightbox-close { position:absolute; top:1.5rem; right:2rem; color:white; font-size:2rem; cursor:pointer; background:none; border:none; }
 
 @media (max-width:900px) {
-  .hero-inner, .about-inner { grid-template-columns:1fr; gap:3rem; }
+  .hero-inner, .about-inner, .logos-inner { grid-template-columns:1fr; gap:3rem; }
   .hero-image, .about-image { height:380px; max-width:500px; margin:0 auto; }
+  .hero-text .hero-logo { width:140px; height:140px; margin:0 auto 1rem; display:block; }
+  .hero-text { text-align:center; }
+  .hero-text p.lead { margin-left:auto; margin-right:auto; }
+  .hero-ctas { justify-content:center; }
   .gallery { grid-template-columns:repeat(2,1fr); grid-auto-rows:180px; }
   .find-details { grid-template-columns:1fr; }
   .nav-links { position:absolute; top:100%; left:0; right:0; background:var(--cream); flex-direction:column; padding:1.5rem; gap:1rem; display:none; border-bottom:1px solid var(--gray-light); }
@@ -160,6 +184,7 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
   .order-form-wrap { padding:2rem 1.5rem; }
   section { padding:4rem 1.2rem; }
   .gallery-intro { padding:2rem 1.5rem; }
+  .logos-image .tag-stamp { right:auto; left:50%; transform:translateX(-50%) rotate(8deg); top:-15px; }
 }
 @media (max-width:500px) {
   .gallery { grid-template-columns:1fr; grid-auto-rows:240px; }
@@ -184,6 +209,7 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
     <ul class="nav-links">
       <li><a href="#menu">Menu</a></li>
       <li><a href="#custom">Custom Cookies</a></li>
+      <li><a href="#logos">Business Logos</a></li>
       <li><a href="#order">Order</a></li>
       <li><a href="#find">Find Us</a></li>
       <li><a href="#about">About</a></li>
@@ -194,6 +220,7 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
+      <img class="hero-logo" src="images/logo.png" alt="Cookie Central Memphis logo">
       <span class="eyebrow">~ Baked fresh in Memphis ~</span>
       <h1>Cookies made<br>with <span class="accent">love.</span></h1>
       <p class="lead">Fresh-baked cookies, melt-in-your-mouth Biscoff cinnamon rolls, coffee caramel fudge, and showstopping custom decorated cookies for every occasion.</p>
@@ -217,6 +244,11 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
       <h2>Sweet things <span class="accent">we bake</span></h2>
       <p>Everything is baked fresh. Cookie flavors come by the dozen; cinnamon rolls and fudge are sold individually; cookie jars are perfect for sharing (or not).</p>
     </div>
+
+    <div class="military-banner">
+      <p><span class="star">★</span> In honor of our heroes, Cookie Central Memphis offers a <strong>10% military discount</strong> as a small token of appreciation. <span class="star">★</span></p>
+    </div>
+
     <div class="menu-grid">
       <div class="menu-card"><div class="info"><h3>Raspberry Cheesecake Cookies</h3><p>Soft, buttery cookies bursting with real raspberry and cream cheese.</p></div><div class="price">$24<span class="unit">/ dozen</span></div></div>
       <div class="menu-card"><div class="info"><h3>Blueberry Cheesecake Cookies</h3><p>Sweet blueberries folded into a rich cheesecake cookie.</p></div><div class="price">$24<span class="unit">/ dozen</span></div></div>
@@ -226,7 +258,8 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
       <div class="menu-card"><div class="info"><h3>Custom Decorated Cookies</h3><p>Hand-decorated sugar cookies for any theme or event.</p></div><div class="price">$45<span class="unit">/ dozen</span></div></div>
       <div class="menu-card"><div class="info"><h3>Chocolate Chip Cookie Jar</h3><p>A mason jar filled with mini chocolate chip cookies. The market favorite.</p></div><div class="price">$10<span class="unit">each</span></div></div>
       <div class="menu-card"><div class="info"><h3>Coffee Caramel Fudge Tin</h3><p>Rich, creamy fudge with notes of coffee and caramel.</p></div><div class="price">$5<span class="unit">each</span></div></div>
-      <div class="menu-card"><div class="info"><h3>Biscoff Cinnamon Roll</h3><p>Warm cinnamon roll topped with Biscoff cookie crumble and icing.</p></div><div class="price">$8<span class="unit">each</span></div></div>
+      <div class="menu-card"><div class="info"><h3>Biscoff Cinnamon Roll</h3><p>Warm cinnamon roll infused four times with Biscoff cookie and topped with homemade cream cheese icing and cookie crumble.</p></div><div class="price">$8<span class="unit">each</span></div></div>
+      <div class="menu-card"><div class="info"><h3>Biscoff Cinnamon Roll Tray</h3><p>Six warm cinnamon rolls infused four times with Biscoff cookie and topped with homemade cream cheese icing and cookie crumble.</p></div><div class="price">$25<span class="unit">/ tray of 6</span></div></div>
     </div>
     <p class="menu-note">Seasonal flavors — like Strawberry Lemonade — drop in throughout the year. Stop by the market to see what's new!</p>
   </div>
@@ -237,25 +270,53 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
     <div class="section-header">
       <span class="eyebrow">~ Custom decorated ~</span>
       <h2>One-of-a-kind <span class="accent">cookies</span></h2>
-      <p>From baby showers to business logos, birthdays to holidays — every cookie is hand-decorated to match your event.</p>
+      <p>From baby showers to graduations, birthdays to holidays — every cookie is hand-decorated to match your event.</p>
     </div>
     <div class="gallery-intro">
       <h3>What we love to make</h3>
-      <p>Birthdays · Baby Showers · Weddings & Prom · Holidays · Sports · Pop Culture · Business Logos · & anything you can dream up</p>
+      <p>Birthdays · Baby Showers · Weddings & Prom · Holidays · Sports · Pop Culture · School Events · Pride · & anything you can dream up</p>
     </div>
     <div class="gallery">
-      <div class="gallery-item tall" onclick="openLightbox('images/decorated-kaylee.jpg')"><img src="images/decorated-kaylee.jpg" alt="Skating themed birthday cookies"><div class="caption"><span>Kids' Birthday — Skating theme</span></div></div>
+      <div class="gallery-item tall" onclick="openLightbox('images/decorated-love.png')"><img src="images/decorated-love.png" alt="Love is Love rainbow and heart cookies"><div class="caption"><span>Love is Love · Pride</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/decorated-kaylee.jpg')"><img src="images/decorated-kaylee.jpg" alt="Skating themed birthday cookies"><div class="caption"><span>Kids' Birthday — Skating</span></div></div>
       <div class="gallery-item" onclick="openLightbox('images/decorated-baby.jpg')"><img src="images/decorated-baby.jpg" alt="Baby shower cookies"><div class="caption"><span>Baby Shower</span></div></div>
+      <div class="gallery-item wide" onclick="openLightbox('images/decorated-soccer.png')"><img src="images/decorated-soccer.png" alt="Soccer themed Trojans cookies"><div class="caption"><span>Sports & Team Themes</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/decorated-vacation.png')"><img src="images/decorated-vacation.png" alt="Bon Voyage vacation cookies"><div class="caption"><span>Bon Voyage & Travel</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/decorated-summer-uniform.png')"><img src="images/decorated-summer-uniform.png" alt="Summer flamingo and bikini cookies"><div class="caption"><span>Summer & Beach Parties</span></div></div>
+      <div class="gallery-item tall" onclick="openLightbox('images/decorated-school.png')"><img src="images/decorated-school.png" alt="School Wildcats themed cookies"><div class="caption"><span>School & Teacher Gifts</span></div></div>
       <div class="gallery-item" onclick="openLightbox('images/decorated-roses-new.jpg')"><img src="images/decorated-roses-new.jpg" alt="Pink rose heart cookies"><div class="caption"><span>Valentine's & Anniversary</span></div></div>
-      <div class="gallery-item wide" onclick="openLightbox('images/logo-cookie.jpg')"><img src="images/logo-cookie.jpg" alt="Custom business logo cookie"><div class="caption"><span>Custom Business Logo Cookies</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('images/decorated-bees.jpg')"><img src="images/decorated-bees.jpg" alt="Honeycomb and bees cookies"><div class="caption"><span>Honeycomb & Bees</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('images/decorated-sugar-skulls.jpg')"><img src="images/decorated-sugar-skulls.jpg" alt="Sugar skull cookies"><div class="caption"><span>Día de los Muertos</span></div></div>
-      <div class="gallery-item tall" onclick="openLightbox('images/decorated-pumpkin-trucks.jpg')"><img src="images/decorated-pumpkin-trucks.jpg" alt="Fall pumpkin truck cookies"><div class="caption"><span>Fall & Harvest</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/decorated-emoji-new.png')"><img src="images/decorated-emoji-new.png" alt="Emoji cookies"><div class="caption"><span>Fun Emoji Sets</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/decorated-farm.png')"><img src="images/decorated-farm.png" alt="Farm animal cookies"><div class="caption"><span>Farm & Animals</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/decorated-pumpkin-trucks.jpg')"><img src="images/decorated-pumpkin-trucks.jpg" alt="Fall pumpkin truck cookies"><div class="caption"><span>Fall & Harvest</span></div></div>
+      <div class="gallery-item" onclick="openLightbox('images/decorated-patriotic-ice.png')"><img src="images/decorated-patriotic-ice.png" alt="Patriotic ice cream cookies"><div class="caption"><span>Patriotic & 4th of July</span></div></div>
       <div class="gallery-item" onclick="openLightbox('images/decorated-prom.jpg')"><img src="images/decorated-prom.jpg" alt="Prom themed cookies"><div class="caption"><span>Weddings & Prom</span></div></div>
-      <div class="gallery-item" onclick="openLightbox('images/decorated-49ers.jpg')"><img src="images/decorated-49ers.jpg" alt="49ers football cookies"><div class="caption"><span>Sports & Game Day</span></div></div>
       <div class="gallery-item" onclick="openLightbox('images/decorated-mario.jpg')"><img src="images/decorated-mario.jpg" alt="Mario themed cookies"><div class="caption"><span>Pop Culture & Gaming</span></div></div>
       <div class="gallery-item" onclick="openLightbox('images/decorated-black-hair.jpg')"><img src="images/decorated-black-hair.jpg" alt="Black hair silhouette cookies"><div class="caption"><span>Hair & Beauty</span></div></div>
       <div class="gallery-item" onclick="openLightbox('images/decorated-reindeer.jpg')"><img src="images/decorated-reindeer.jpg" alt="Reindeer Christmas cookies"><div class="caption"><span>Christmas & Winter</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="logos">
+  <div class="container">
+    <div class="logos-inner">
+      <div class="logos-image">
+        <div class="tag-stamp">For your business</div>
+        <img src="images/logo-cookie-feature.png" alt="Modern Journey Counseling LLC custom logo cookie">
+      </div>
+      <div class="logos-text">
+        <span class="eyebrow">~ Custom business logo cookies ~</span>
+        <h2>Your logo, <span class="accent">made edible.</span></h2>
+        <p>For grand openings, client gifts, conferences, holiday thank-yous, and ribbon cuttings — Cookie Central Memphis turns your company logo into a hand-decorated cookie that tastes as good as it looks.</p>
+        <ul>
+          <li>Custom-sized cookies to fit your brand</li>
+          <li>Hand-painted colors to match your palette</li>
+          <li>Perfect for corporate events, realtor closings, salon openings, churches, counseling practices, and more</li>
+          <li>Individually packaged with your logo sticker on request</li>
+        </ul>
+        <p style="font-style:italic; color:var(--pink-deepest);">Email Gina with a copy of your logo and we'll send a quote within 24 hours.</p>
+        <a href="#order" class="btn btn-primary" style="margin-top:0.5rem;">Request a Quote</a>
+      </div>
     </div>
   </div>
 </section>
@@ -318,11 +379,11 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
           </div>
           <div class="form-field full">
             <label for="order-details">Your Order</label>
-            <textarea id="order-details" name="Order_Details" placeholder="Example: 1 dozen Raspberry Cheesecake, 2 Cookie Jars, 3 Biscoff Cinnamon Rolls" required></textarea>
+            <textarea id="order-details" name="Order_Details" placeholder="Example: 1 dozen Raspberry Cheesecake, 2 Cookie Jars, 1 Biscoff Roll Tray" required></textarea>
           </div>
           <div class="form-field full">
-            <label for="notes">Custom Cookie Details (if applicable)</label>
-            <textarea id="notes" name="Custom_Details" placeholder="Tell us about your event — theme, colors, names, designs, quantity needed…"></textarea>
+            <label for="notes">Custom Cookie or Logo Details (if applicable)</label>
+            <textarea id="notes" name="Custom_Details" placeholder="Tell us about your event — theme, colors, names, designs, business logo, quantity needed…"></textarea>
           </div>
         </div>
         <button type="submit" class="form-submit">Send Order Request</button>
@@ -342,9 +403,8 @@ footer .copyright { margin-top:2rem; padding-top:2rem; border-top:1px solid rgba
       <div class="about-text">
         <span class="eyebrow">~ Our story ~</span>
         <h2>Hi, I'm <span class="accent">Gina.</span></h2>
-        <p>Cookie Central Memphis started in my kitchen, with my mom's recipes and a love for the kind of cookies that feel like home. Many of my childhood memories center around baking with my mama and decorating cookies with my daddy.</p>
-        <p>Today, Cookie Central Memphis is a combination of the two — creativity, sweets, and a whole lot of heart. Every cookie, every jar of fudge, every cinnamon roll is made fresh, by hand, with care for the person on the other end.</p>
-        <p>Supporting veterans means everything to us. With all that they have risked and sacrificed for this country, giving the utmost support and respect at every opportunity is the very least we can do.</p>
+        <p>Cookie Central Memphis started in my childhood home. Baking oatmeal cookies with my daddy and sister and making artwork for my mama hold some of my most precious memories.</p>
+        <p>Cookie Central Memphis was created as a resulting combination of the two — creativity, sweets, family, and a whole lot of heart. Every cookie, every jar of fudge, every cinnamon roll is made fresh, by hand, with care for the person on the other end.</p>
       </div>
     </div>
   </div>
